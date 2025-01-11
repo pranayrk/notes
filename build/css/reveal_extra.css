@@ -1,0 +1,58 @@
+.home, .search-container {
+	position: fixed;
+	top: 4%;
+	font: inherit;
+	font-size: 1.5rem;
+	z-index: 4;
+}
+
+.home {
+	left: 4%;
+}
+
+.search-container{
+	right: 4%;
+}
+
+#search {
+	height: 2rem;
+	font-size: 1rem;
+	border: black;
+	background-color: white;
+}
+
+#submit {
+	height: 2rem;
+	border: 3px solid var(--r-link-color);
+	background-color: white;
+	color: var(--r-link-color);
+	font-size: 1rem;
+}
+
+.reveal p {
+	font-size: 38px;
+}
+
+.reveal li {
+	font-size: 38px;
+}
+
+.reveal blockquote {
+	border: 2px solid black;
+	padding: 5%;
+	font-style: normal;
+	text-align: left;
+}
+
+.reveal em {
+	text-decoration: underline;
+}
+
+.reveal h6 {
+	font-style: normal;
+	font-size: 24px;
+	font-weight: normal;
+	text-transform: none;
+
+}
+
