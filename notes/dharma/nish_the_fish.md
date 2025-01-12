@@ -6,6 +6,11 @@
 - [Tantra, hatha yoga and modern postural yoga] (https://youtu.be/1wvsameuuZ4)
 - [What did Vivekananda and Buddha value the most](https://youtu.be/RPDc7r4lc4g)
 - [Is Chinnamasta a fierce goddess](https://youtu.be/9eW1eXjXZe4)
+
+---
+
+### Nish the Fish
+
 - [The Buddha and why you should learn tantra](https://youtu.be/pzqmmzQ7MEE)
 - [The tantrik Hanuman](https://youtu.be/KRMPx5ZgXwk)
 - [Vedanta and Tantra on God](https://youtu.be/Sqa1YupKfME)
