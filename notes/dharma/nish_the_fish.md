@@ -2,8 +2,8 @@
 
 - [Where did Tantra come from? The story of Shavism](https://youtu.be/9_PFod0eQ_A)
 - [What is our lineage](https://youtu.be/BdwmwMo-Ep8)
-- [The tantrik Ganesha] (https://youtu.be/aLvWq_lqs04)
-- [Tantra, hatha yoga and modern postural yoga] (https://youtu.be/1wvsameuuZ4)
+- [The tantrik Ganesha](https://youtu.be/aLvWq_lqs04)
+- [Tantra, hatha yoga and modern postural yoga](https://youtu.be/1wvsameuuZ4)
 - [What did Vivekananda and Buddha value the most](https://youtu.be/RPDc7r4lc4g)
 - [Is Chinnamasta a fierce goddess](https://youtu.be/9eW1eXjXZe4)
 
