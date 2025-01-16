@@ -19,3 +19,19 @@
 - [Goddess worship in tantric buddhism](https://youtu.be/gIEq7dcn1vU)
 - [Tantric Lakshmi](https://youtu.be/1717p-YGkDU)
 - [Tantric Gayatri mantra](https://youtu.be/bxfFG74LHTs)
+
+---
+
+### Nish the Fish
+- [Be Your own Religion, Vivekananda's Bhakti Yoga](https://youtu.be/e0gEK1V96ug)
+- Bhakti is the sincere quest of God that begins in love, continues in love and ends in love
+- Half of the book is preparatory, like following specific rituals, observing specific days, avoiding food etc
+- the latter half talks about the madness/ecstasy of love of God
+- Ramprasad is a Kali bhakt who wrote songs in Bengali 
+- Ramakrishna used to love his songs
+- prana prathisthana means consecrating the murti with the essence of God, a lot of rituals to be done after that, like feeding, bathing, etc but you can feel the presence more strongly 
+- the idea of God that every person has might totally different from the next person, even if they are of the same faith
+- the seed does not become the soil, it just assimilates it and becomes it's own entity 
+- the world's religions are a repository of positive results 
+- take all of these and make some meaning out of it and grow according to your own law 
+- 
