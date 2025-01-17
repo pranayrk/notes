@@ -22,4 +22,13 @@
 10008:
     title: Hindu Series
     markdown: hindu_series.md
+10009:
+    title: Japa
+    markdown: japa.md
+10010:
+    title: Satipatthana Sutta
+    link: https://www.accesstoinsight.org/tipitaka/mn/mn.010.nysa.html
+10011:
+    title: Anapanasati Sutta
+    markdown: anapanasati.md
        
