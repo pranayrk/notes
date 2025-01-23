@@ -21,8 +21,8 @@
 - [Tantric Gayatri mantra](https://youtu.be/bxfFG74LHTs)
 
 ---
+##### Nish the Fish
 
-### Nish the Fish
 - [Be Your own Religion, Vivekananda's Bhakti Yoga](https://youtu.be/e0gEK1V96ug)
 - Bhakti is the sincere quest of God that begins in love, continues in love and ends in love
 - Half of the book is preparatory, like following specific rituals, observing specific days, avoiding food etc
@@ -34,4 +34,11 @@
 - the seed does not become the soil, it just assimilates it and becomes it's own entity 
 - the world's religions are a repository of positive results 
 - take all of these and make some meaning out of it and grow according to your own law 
-- 
+
+
+---
+
+##### Nish the Fish
+
+[How to love everyone and everything](https://youtu.be/NqsLwySpHr8?si=7Mlih6scOfGu1NuH)
+
