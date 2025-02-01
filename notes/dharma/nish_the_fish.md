@@ -15,7 +15,7 @@
 - [The tantrik Hanuman](https://youtu.be/KRMPx5ZgXwk)
 - [Vedanta and Tantra on God](https://youtu.be/Sqa1YupKfME)
 - [Vijnana Bhairava Tantra](https://youtu.be/oyJUFACYEKw)
-- [Essential Ramakrishna teachings] (https://youtu.be/eVdR0qcNV4U)
+- [Essential Ramakrishna teachings](https://youtu.be/eVdR0qcNV4U)
 - [Goddess worship in tantric buddhism](https://youtu.be/gIEq7dcn1vU)
 - [Tantric Lakshmi](https://youtu.be/1717p-YGkDU)
 - [Tantric Gayatri mantra](https://youtu.be/bxfFG74LHTs)

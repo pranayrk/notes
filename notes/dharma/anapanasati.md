@@ -1,7 +1,7 @@
 ### Anapanasati Sutta
 
 
-[link](https://www.accesstoinsight.org/tipitaka/mn/mn.118.than.html)
+[Anapanasati Sutta: Mindfulness of Breathing, AccessToInsight.org](https://www.accesstoinsight.org/tipitaka/mn/mn.118.than.html)
 
 * The **Ānāpānasati Sutta** prescribes mindfulness of inhalation and exhalation as an element of mindfulness of the body, and recommends the practice of mindfulness of breathing as a means of cultivating the **seven factors of awakening**.
 * The Ānāpānasati Sutta includes sixteen steps of practice grouped into four tetrads.
@@ -50,7 +50,6 @@ A popular post-canonical method still used today, follows four stages:
 
 ---
  [The Meditative Development of Mindfulness of Breathing, Buddhadasa Bhikku](https://drive.google.com/file/d/1PWKfGfm39atpBYH-SGGrImY3iboA7yrP/view?usp=drivesdk)
- [The fourth
 ---
 
 Buddhadasa Bhikku's "Anapanasati," translated by Bhikku Nagasena.
