@@ -7,3 +7,5 @@ dharma:
     - 10.yml
 robotics:
     - 10.yml
+go:
+    - 10.yml
