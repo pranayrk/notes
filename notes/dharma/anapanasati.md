@@ -49,6 +49,10 @@ A popular post-canonical method still used today, follows four stages:
 > Traditional anāpānasati teaches to observe inhalation and exhalation by focusing on the air coming in and out the nostrils, but followers of the Burmese Vipassana movement instead recommend focusing on the abdomen's movement during the act of breathing.
 
 ---
+
+[The Basics of Anapanasati](https://youtu.be/MJ3cgh-mV8E?si=sEq1HVHw44z8ki7A)
+
+---
  [The Meditative Development of Mindfulness of Breathing, Buddhadasa Bhikku](https://drive.google.com/file/d/1PWKfGfm39atpBYH-SGGrImY3iboA7yrP/view?usp=drivesdk)
 ---
 
