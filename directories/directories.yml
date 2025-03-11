@@ -9,3 +9,5 @@ robotics:
     - 10.yml
 go:
     - 10.yml
+poetry:
+    - 10.yml
