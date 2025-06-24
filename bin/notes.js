@@ -52,11 +52,18 @@ function load(content) {
         })
 }
 
-function loadHome() { 
-    let home = "# Notes\n#### Pranay Raja Krishnan"
-    load(home)
+function loadMarkdown(content) {
+    load("<section data-markdown>\n" + content + "\n</section>")
 }
 
+function loadSection(content) {
+    load("<section>\n" + content + "\n</section>")
+}
+
+function loadHome() { 
+    let home = "# Notes\n#### Pranay Raja Krishnan"
+    loadMarkdown(home)
+}
 
 code = getURLParameter("goTo")
 
