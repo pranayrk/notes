@@ -22,7 +22,8 @@ function goTo(code) {
     if(!code) {
         return;
     }
-    loadMarkdown(code)
+    const file = code.split('_').join("/")
+    loadMarkdown(file)
 }
 
 function load(content) {
