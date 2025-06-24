@@ -15,7 +15,7 @@ function getURLParameter(param) {
 }
 
 function loadCode(code) {
-    window.location = HOME + "?goTo=" + code
+    window.location = HOME + code ? "?goTo=" + code : ""
 }
 
 function goTo(code) {
