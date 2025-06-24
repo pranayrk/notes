@@ -22,7 +22,7 @@ function goTo(code) {
     if(!code) {
         return;
     }
-    const file = code.split('_').join("/")
+    const file = code.replace(".", "/")
     loadMarkdown(file)
 }
 
