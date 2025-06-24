@@ -14,6 +14,10 @@ function getURLParameter(param) {
     }
 }
 
+function loadCode(code) {
+    window.location = HOME + "?goTo=" + code
+}
+
 function goTo(code) {
     if(!code) {
         return;
