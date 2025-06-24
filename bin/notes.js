@@ -1,6 +1,5 @@
 const HOME = "https://pranayrk.github.io/notes/";
-const DIRECTORIES = HOME + "directories";
-const NOTES = HOME + "notes";
+const NOTES = HOME + "notes/";
 const REVEAL = HOME + "bin/reveal.html";
 
 function getURLParameter(param) {
@@ -15,15 +14,26 @@ function getURLParameter(param) {
 }
 
 function loadCode(code) {
-    window.location = HOME + code ? "?goTo=" + code : ""
+    if(!code) {
+        window.location = HOME;
+        return;
+    }
+    window.location = HOME + "?goTo=" + code
 }
 
 function goTo(code) {
     if(!code) {
         return;
     }
-    const file = code.replace(".", "/")
-    loadMarkdown(file)
+    const path = code.replace(".", "/")
+    const mapFile = path.substring(0, path.lastIndexOf("/"))
+    const note = path.substring(path.lastIndexOf("/") + 1)
+    loadMarkdown(mapFile + "\n\n" + note)
+//    fetch(NOTES + )
+ //       .then(res => res.text())
+  //      .then(revealHTML => {
+   //         loadMarkdown(file)
+    //    })
 }
 
 function load(content) {
