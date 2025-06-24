@@ -29,11 +29,12 @@ function goTo(code) {
     const mapFile = path.substring(0, path.lastIndexOf("/"))
     const note = path.substring(path.lastIndexOf("/") + 1)
     loadMarkdown(mapFile + "\n\n" + note)
-//    fetch(NOTES + )
- //       .then(res => res.text())
-  //      .then(revealHTML => {
-   //         loadMarkdown(file)
-    //    })
+    fetch(NOTES + mapFile + "/" + mapFile + ".map")
+        .then(res => res.text())
+        .then(map => {
+            loadMarkdown(map)
+        })
+    // Handle not found
 }
 
 function load(content) {
