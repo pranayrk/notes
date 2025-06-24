@@ -1,75 +1,121 @@
 const HOME = "https://pranayrk.github.io/notes/";
-const DIRECTORIES = HOME + "directories";
-const NOTES = HOME + "notes";
-const REVEAL = HOME + "bin/reveal.html";
+const NOTES = HOME + "notes/";
 
-function getURLParameter(param) {
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) {
-        var parameterName = sURLVariables[i].split('=');
-        if (parameterName[0] == param) {
-            return parameterName[1];
+function loadDir(dir) {
+    fetch(NOTES + dir + ".dir")
+        .then(res => {
+            if(!res.ok) {
+                loadMarkdown("**" + dir + "** not found");
+                return "";
+            }
+            return res.text()
+        })
+        .then(directory => {
+            if(!directory) {
+                return;
+            }
+            let content = "";
+            const lines = directory.split("\n");
+            lines.forEach((line, index) => {
+                if(!line) {
+                    return;
+                }
+                if(/^\d+/.test(line)) {
+                    content += "* " + line + "\n";
+                } else {
+                    content += line + "\n"
+                }
+                if(index + 1 % 10 == 0) {
+                    content += "\n\n---\n\n"
+                }
+            });
+            loadMarkdown(content)
+        });
+}
+
+function loadCode(dir, code) {
+    fetch(NOTES + dir + ".dir")
+        .then(res => res.text())
+        .then(directory => {
+            let content = "";
+            const lines = directory.split("\n");
+            let found = false;
+            for(let i = 0; i < lines.length; i++) {
+                let line = lines[i]
+                if(!line) {
+                    continue;
+                }
+                if(line.startsWith(code)) {
+                    found = true;
+                    let link = line.substring(line.indexOf("(") + 1, line.lastIndexOf(")"))
+                    goToLink(link)
+                    break;
+                }
+            }
+            if(!found) {
+                loadMarkdown("**" + code + "** not found in **" + dir + "**")
+            }
+        });
+}
+
+function goToCode(code) {
+    document.getElementById("search").value = code;
+
+    if(!code) {
+        window.location = HOME;
+        return;
+    }
+
+    let i = 0;
+    for (; i < code.length && (code[i] < '0' || code[i] > '9'); i++);
+    let dir = code.substring(0,i);
+    code = code.substring(i);
+
+    if (!code) {
+        loadDir(dir)
+    } else {
+        loadCode(dir, code)
+    }
+}
+
+function goToLink(link) {
+    if(link.startsWith("http")) {
+        if(link.startsWith(HOME)) {
+            window.location = link;
+        } else {
+            window.open(link) 
+        }
+    } else {
+        if(link.startsWith("dir:")) {
+            loadDir(link.replace("dir:",""));
+        } else if (link.startsWith("rev:")) {
+            link = link.replace("rev:","");
+            fetch(NOTES + "/" + link)
+                .then(res => res.text())
+                .then(content => {
+                    load(content);
+                });
+        } else if (link.startsWith("md:")) {
+            link = link.replace("md:","");
+            fetch(NOTES + "/" + link)
+                .then(res => res.text())
+                .then(content => {
+                    loadMarkdown(content);
+                });
         }
     }
 }
 
-///MAYBE REMOVE
-function fetchFiles(urls)
-{
-    var list = [];
-    var results = [];
-
-    urls.forEach(function(url, i) {
-        list.push(
-            fetch(url).then(function(res){
-                results[i] = res.blob(); 
-            })
-        );
+function attachLinkEvent() {
+    document.addEventListener('click', function (e) {
+        if (e.target.nodeName == 'A') {
+            e.stopPropagation();
+            e.preventDefault();
+            link = e.srcElement.attributes.href.textContent;
+            if(!link) {
+                return;
+            }
+            goToLink(link);
+        }
     });
-    Promise
-        .all(list) // (4)
-        .then(function() {
-            return results;
-        });
-}
-
-function goTo(code) {
-    if(!code) {
-        return;
-    }
-    window.location = HOME + "?goTo=" + code ;
-}
-
-function load(content) {
-    fetch(REVEAL)
-        .then(res => res.text())
-        .then(revealHTML => {
-            revealHTML = revealHTML.replace("{{REVEAL}}", content);
-            document.open();
-            document.write(revealHTML);
-            document.close();
-        })
-}
-
-function loadMarkdown(content) {
-    load("<section data-markdown>\n" + content + "\n</section>")
-}
-
-function loadSection(content) {
-    load("<section>\n" + content + "\n</section>")
-}
-
-function loadHome() { 
-    let home = "# Notes\n#### Pranay Raja Krishnan"
-    loadMarkdown(home)
-}
-
-code = getURLParameter("goTo")
-
-if(!code) {
-    loadHome();
-}
-else {
-    goTo(code);
 }
