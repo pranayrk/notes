@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>notes</title>
+
+		<link rel="stylesheet" href="bin/dist/reset.css">
+		<link rel="stylesheet" href="bin/dist/reveal.css">
+		<link rel="stylesheet" href="bin/dist/theme/white.css">
+		<link rel="stylesheet" href="bin/plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="bin/css/reveal_extra.css">
+		<script src="bin/notes.js"></script>
+		<script src="bin/plugin/math/math.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                {{REVEAL}}
+			</div>
+			<div class="home"><a href="https://pranayrk.github.io/notes">home</a></div>
+			<div class="search-container">
+				<form action="JavaScript:goToNote(search.value)">
+					<input type="text" placeholder="go to note" name="search" id="search">
+					<button type="submit" id="submit">submit</button>
+				</form>
+			</div>
+		</div>
+
+		</div>
+
+		<script src="bin/dist/reveal.js"></script>
+		<script src="bin/plugin/notes/notes.js"></script>
+		<script src="bin/plugin/markdown/markdown.js"></script>
+		<script src="bin/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				width: 1240,
+				height: 760,
+				margin: 0.04,
+				hash: true,
+				customcontrols: {
+					controls: [
+						{ icon: '<i class="fa fa-pen-square"></i>',
+							title: 'Toggle chalkboard (B)',
+							action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+							title: 'Toggle notes canvas (C)',
+							action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+					]
+				},
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+			});
+		</script>
+	</body>
+</html>
+
+
