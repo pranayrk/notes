@@ -25,7 +25,7 @@ function goTo(code) {
     if(!code) {
         return;
     }
-    const path = code.replace(".", "/")
+    const path = code.replaceAll(".", "/")
     const mapFile = path.substring(0, path.lastIndexOf("/"))
     const note = path.substring(path.lastIndexOf("/") + 1)
     loadMarkdown(mapFile + "\n\n" + note)
