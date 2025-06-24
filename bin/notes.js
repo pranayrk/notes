@@ -26,11 +26,21 @@ function goTo(code) {
         return;
     }
     const path = code.replaceAll(".", "/")
-    const mapFile = path.substring(0, path.lastIndexOf("/"))
-    const note = path.substring(path.lastIndexOf("/") + 1)
+    let mapFile = path.substring(0, path.lastIndexOf("/"))
+    let note = path.substring(path.lastIndexOf("/") + 1)
+    if (!mapFile) {
+        mapFile = note;
+        note = ""
+    }
     loadMarkdown(mapFile + "\n\n" + note)
     fetch(NOTES + mapFile + "/" + mapFile + ".map")
-        .then(res => res.text())
+        .then(function(response) {
+            if (!response.ok) {
+                loadMarkdown(code + " not found")
+            } else {
+                return response.text()
+            }
+        })
         .then(map => {
             loadMarkdown(map)
         })
