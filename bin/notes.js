@@ -14,31 +14,11 @@ function getURLParameter(param) {
     }
 }
 
-///MAYBE REMOVE
-function fetchFiles(urls)
-{
-    var list = [];
-    var results = [];
-
-    urls.forEach(function(url, i) {
-        list.push(
-            fetch(url).then(function(res){
-                results[i] = res.blob(); 
-            })
-        );
-    });
-    Promise
-        .all(list) // (4)
-        .then(function() {
-            return results;
-        });
-}
-
 function goTo(code) {
     if(!code) {
         return;
     }
-    window.location = HOME + "?goTo=" + code ;
+    loadMarkdown(code)
 }
 
 function load(content) {
@@ -61,7 +41,7 @@ function loadSection(content) {
 }
 
 function loadHome() { 
-    let home = "# Notes\n#### Pranay Raja Krishnan"
+    const home = "# Notes\n#### Pranay Raja Krishnan"
     loadMarkdown(home)
 }
 
