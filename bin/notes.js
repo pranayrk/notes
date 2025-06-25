@@ -101,7 +101,7 @@ function loadHome() {
 
 function attachLinkEvent() {
     console.log("ADD3")
-    document.body.addEventListener('click', function (e) {
+    document.addEventListener('click', function (e) {
         console.log("CLICK")
         console.log(e)
         if (e.target.nodeName == 'A') {
@@ -111,8 +111,6 @@ function attachLinkEvent() {
     });
 }
 
-
-attachLinkEvent();
 code = getURLParameter("goTo")
 
 if(!code) {
