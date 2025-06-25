@@ -106,13 +106,18 @@ function linkEvent(e) {
         return;
     }
     console.log(e)
+    e.preventDefault(); 
+    console.log("HERE")
+    return false;  
 }
 
 function attachLinkEvent() {
     if (document.addEventListener) {
+        console.log("ADD1")
         document.addEventListener('click', linkEvent, false);
     }
     else {
+        console.log("ADD1")
         document.attachEvent('onclick', linkEvent);
     }
 }
