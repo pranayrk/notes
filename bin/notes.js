@@ -99,29 +99,16 @@ function loadHome() {
     loadMarkdown(home)
 }
 
-function linkEvent(e) {
-    console.log("HHERE")
-    var e = window.e || e;
-    console.log(e.target.tagname)
-
-    if (e.target.tagName !== 'A' && e.target.tagName !== 'a') {
-        return;
-    }
-    console.log(e)
-    e.preventDefault(); 
-    console.log("HERE")
-    return false;  
-}
-
 function attachLinkEvent() {
-    if (document.addEventListener) {
-        console.log("ADD2")
-        document.addEventListener('click', linkEvent, false);
-    }
-    else {
-        console.log("ADD1")
-        document.attachEvent('onclick', linkEvent);
-    }
+    console.log("ADD3")
+    document.body.addEventListener('click', function (e) {
+        console.log("CLICK")
+        console.log(e)
+        if (e.target.nodeName == 'A') {
+            e.preventDefault();
+            console.log("PREVERNTED")
+        }
+    });
 }
 
 
