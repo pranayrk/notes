@@ -21,7 +21,7 @@ function loadCode(code) {
     window.location = HOME + "?goTo=" + code
 }
 
-function loadMap(map) {
+function loadMap(mapFile, map) {
     let lines = map.split('\n');
     let content = ""
     let linkcounter = 0
@@ -29,7 +29,7 @@ function loadMap(map) {
         if (lines[i].includes(" ... ")) {
             let add = lines[i].split(" ... ")
             if (add.length == 3) {
-                content += "* [" + add[0] + ": " + add[1] + "](" + add[2] + ")\n"
+                content += "* [" + mapFile.replaceAll("/",".") + "." + add[0] + ": " + add[1] + "](" + add[2] + ")\n"
             } else {
                 content += "* Error in " + lines[i]
             }
@@ -67,7 +67,7 @@ function goTo(code) {
         })
         .then(map => {
             if (!note) {
-                loadMap(map)
+                loadMap(mapFile, map)
             } else {
                 loadNote(map, note)
             }
@@ -100,13 +100,14 @@ function loadHome() {
 }
 
 function attachLinkEvent() {
-    console.log("ADD4")
+    console.log("TEST5")
     document.addEventListener('click', function (e) {
-        console.log("CLICK")
-        console.log(e)
         if (e.target.nodeName == 'A') {
             e.preventDefault();
-            console.log("PREVERNTED")
+            link = e.srcElement.attributes.href.textContent;
+            console.log(link)
+            return false;
+
         }
     });
 }
