@@ -100,7 +100,7 @@ function loadHome() {
 }
 
 function attachLinkEvent() {
-    console.log("ADD3")
+    console.log("ADD4")
     document.addEventListener('click', function (e) {
         console.log("CLICK")
         console.log(e)
