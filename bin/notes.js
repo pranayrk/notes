@@ -101,8 +101,9 @@ function loadHome() {
 
 function linkEvent(e) {
     var e = window.e || e;
+    console.log(e.target.tagname)
 
-    if (e.target.tagName !== 'A') {
+    if (e.target.tagName !== 'A' && e.target.tagName !== 'a') {
         return;
     }
     console.log(e)
