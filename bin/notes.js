@@ -28,7 +28,7 @@ function loadMap(map) {
     for(let i = 0; i < lines.length; i++){
         if (lines[i].includes(" ... ")) {
             let add = lines[i].split(" ... ")
-            if (add.length() == 3) {
+            if (add.length == 3) {
                 content += "* [" + add[0] + ": " + add[1] + "](" + add[2] + ")"
             } else {
                 content += "* Error in " + lines[i]
