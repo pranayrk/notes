@@ -106,8 +106,16 @@ function attachLinkEvent() {
             e.preventDefault();
             link = e.srcElement.attributes.href.textContent;
             console.log(link)
+            if(link.endsWith(".md") || link.endsWith(".rv") || link.endsWith(".dir")) {
+                console.log("HERE")
+                handleNote() //or handle here itself and handlenote should simulate a link click
+            } else if (link.startsWith(HOME){
+                window.location.href = link;
+            }
+            else {
+                window.open(link)
+            }
             return false;
-
         }
     });
 }
