@@ -100,6 +100,7 @@ function loadHome() {
 }
 
 function linkEvent(e) {
+    console.log("HHERE")
     var e = window.e || e;
     console.log(e.target.tagname)
 
@@ -114,7 +115,7 @@ function linkEvent(e) {
 
 function attachLinkEvent() {
     if (document.addEventListener) {
-        console.log("ADD1")
+        console.log("ADD2")
         document.addEventListener('click', linkEvent, false);
     }
     else {
