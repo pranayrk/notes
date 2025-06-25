@@ -42,6 +42,7 @@ function loadMap(map) {
             content += "\n\n---\n\n"
         }
     }
+    loadMarkdown(content)
 }
 
 
