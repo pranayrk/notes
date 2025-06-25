@@ -29,7 +29,7 @@ function loadMap(map) {
         if (lines[i].includes(" ... ")) {
             let add = lines[i].split(" ... ")
             if (add.length == 3) {
-                content += "* [" + add[0] + ": " + add[1] + "](" + add[2] + ")"
+                content += "* [" + add[0] + ": " + add[1] + "](" + add[2] + ")\n"
             } else {
                 content += "* Error in " + lines[i]
             }
@@ -99,6 +99,26 @@ function loadHome() {
     loadMarkdown(home)
 }
 
+function linkEvent(e) {
+    var e = window.e || e;
+
+    if (e.target.tagName !== 'A') {
+        return;
+    }
+    console.log(e)
+}
+
+function attachLinkEvent() {
+    if (document.addEventListener) {
+        document.addEventListener('click', linkEvent, false);
+    }
+    else {
+        document.attachEvent('onclick', linkEvent);
+    }
+}
+
+
+attachLinkEvent();
 code = getURLParameter("goTo")
 
 if(!code) {
