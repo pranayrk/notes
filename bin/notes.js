@@ -21,6 +21,30 @@ function loadCode(code) {
     window.location = HOME + "?goTo=" + code
 }
 
+function loadMap(map) {
+    let lines = map.split('\n');
+    let content = ""
+    let linkcounter = 0
+    for(let i = 0; i < lines.length; i++){
+        if (lines[i].includes(" ... ")) {
+            let add = lines[i].split(" ... ")
+            if (add.length() == 3) {
+                content += "* [" + add[0] + ": " + add[1] + "](" + add[2] + ")"
+            } else {
+                content += "* Error in " + lines[i]
+            }
+        }
+        else {
+            content += lines[i] + "\n"
+        }
+        linkcounter++;
+        if (linkcounter % 10 == 0) {
+            content += "\n\n---\n\n"
+        }
+    }
+}
+
+
 function goTo(code) {
     if(!code) {
         return;
@@ -32,8 +56,7 @@ function goTo(code) {
         mapFile = note;
         note = ""
     }
-    loadMarkdown(mapFile + "\n\n" + note)
-    fetch(NOTES + mapFile + "/" + mapFile + ".map")
+    fetch(NOTES + mapFile + "/" + mapFile + ".dir")
         .then(function(response) {
             if (!response.ok) {
                 loadMarkdown(code + " not found")
@@ -42,7 +65,11 @@ function goTo(code) {
             }
         })
         .then(map => {
-            loadMarkdown(map)
+            if (!note) {
+                loadMap(map)
+            } else {
+                loadNote(map, note)
+            }
         })
     // Handle not found
 }
