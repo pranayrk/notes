@@ -69,6 +69,8 @@ function goTo(code) {
             if (!note) {
                 loadMap(mapFile, map)
             } else {
+                // go line by line to find the note
+                //simulate link click with the note link
                 loadNote(map, note)
             }
         })
@@ -100,7 +102,7 @@ function loadHome() {
 }
 
 function attachLinkEvent() {
-    console.log("TEST5")
+    console.log("TEST6")
     document.addEventListener('click', function (e) {
         if (e.target.nodeName == 'A') {
             e.preventDefault();
@@ -109,7 +111,8 @@ function attachLinkEvent() {
             if(link.endsWith(".md") || link.endsWith(".rv") || link.endsWith(".dir")) {
                 console.log("HERE")
                 handleNote() //or handle here itself and handlenote should simulate a link click
-            } else if (link.startsWith(HOME){
+            } 
+            else if (link.startsWith(HOME)) {
                 window.location.href = link;
             }
             else {
