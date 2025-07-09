@@ -38,23 +38,22 @@ function loadDir(dir) {
             }
             let content = "";
             const lines = directory.split("\n");
-            lines.forEach((line, index) => {
+            let index = 0
+            lines.forEach((line) => {
                 if(!line) {
                     return;
                 }
                 if(/^\d+/.test(line)) {
                     line = line.substring(0, line.lastIndexOf(")") + 1)
                     content += "* " + line + "\n";
+                    index++;
                 } else {
                     content += line + "\n"
                 }
-                console.log("Index" + index);
                 if((index + 1) % 10 == 0) {
-                    console.log("Line BREAK");
                     content += "\n\n---\n\n"
                 }
             });
-            console.log(content)
             loadMarkdown(content)
         });
 }
