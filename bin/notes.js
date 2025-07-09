@@ -43,6 +43,7 @@ function loadDir(dir) {
                     return;
                 }
                 if(/^\d+/.test(line)) {
+                    line = line.substring(0, line.lastIndexOf(")"))
                     content += "* " + line + "\n";
                 } else {
                     content += line + "\n"
@@ -57,8 +58,17 @@ function loadDir(dir) {
 
 function loadCode(dir, code) {
     fetch(NOTES + dir + ".dir")
-        .then(res => res.text())
+        .then(res => {
+            if(!res.ok) {
+                loadMarkdown("**" + dir + "** not found");
+                return "";
+            }
+            return res.text()
+        })
         .then(directory => {
+            if(!directory) {
+                return;
+            }
             let content = "";
             const lines = directory.split("\n");
             let found = false;
@@ -113,15 +123,33 @@ function goToLink(link) {
         } else if (link.startsWith("rev:")) {
             link = link.replace("rev:","");
             fetch(NOTES + "/" + link)
-                .then(res => res.text())
+                .then(res => {
+                    if(!res.ok) {
+                        loadMarkdown("**" + link + "** not found");
+                        return "";
+                    }
+                    return res.text()
+                })
                 .then(content => {
+                    if(!content) {
+                        return;
+                    }
                     load(content);
                 });
         } else if (link.startsWith("md:")) {
             link = link.replace("md:","");
             fetch(NOTES + "/" + link)
-                .then(res => res.text())
+                .then(res => {
+                    if(!res.ok) {
+                        loadMarkdown("**" + link + "** not found");
+                        return "";
+                    }
+                    return res.text()
+                })
                 .then(content => {
+                    if(!content) {
+                        return;
+                    }
                     loadMarkdown(content);
                 });
         }

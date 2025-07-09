@@ -19,19 +19,12 @@
 	right: 4%;
 }
 
-#search {
+#search, #submit {
 	height: 2rem;
 	font-size: 1rem;
-	border: black;
-	background-color: white;
-}
-
-#submit {
-	height: 2rem;
 	border: 3px solid var(--r-link-color);
-	background-color: white;
+	background-color: var(--r-background-color);
 	color: var(--r-link-color);
-	font-size: 1rem;
 }
 
 .reveal {
