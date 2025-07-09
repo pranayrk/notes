@@ -29,31 +29,31 @@
 }
 
 .reveal {
-	font-size: 38px;
+	font-size: 34px;
 }
 
 .reveal h1 {
-    font-size: 46px;
+    font-size: 42px;
     color: var(--r-link-color);
 }
 
 .reveal h2 {
-	font-size: 42px;
+	font-size: 40px;
     color: var(--r-link-color);
 }
 
 .reveal h3 {
-	font-size: 38px;
+	font-size: 36px;
     color: var(--r-link-color);
 }
 
 .reveal h4 {
-	font-size: 33px;
+	font-size: 34px;
     color: var(--r-link-color);
 }
 
 .reveal h5 {
-	font-size: 29px;
+	font-size: 30px;
     color: var(--r-link-color);
 	font-weight: normal;
 	font-style: normal;
@@ -72,7 +72,7 @@
 	border: 2px solid black;
 	padding: 2%;
 	font-style: italic;
-	font-size: 25px;
+	font-size: 24px;
 	text-align: left;
 }
 
