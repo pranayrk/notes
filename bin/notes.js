@@ -47,11 +47,15 @@ function loadDir(dir) {
                     line = line.substring(0, line.lastIndexOf(")") + 1)
                     content += "* " + line + "\n";
                     index++;
+                    if((index + 1) % 10 == 0) {
+                        content += "\n\n---\n\n"
+                    }
                 } else {
+                    if(line.startsWith("# ")) {
+                        content += "\n\n---\n\n";
+                        index = 0;
+                    }
                     content += line + "\n"
-                }
-                if((index + 1) % 10 == 0) {
-                    content += "\n\n---\n\n"
                 }
             });
             loadMarkdown(content)
