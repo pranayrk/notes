@@ -45,7 +45,7 @@ function loadDir(dir) {
                 if(/^\d+/.test(line)) {
                     check = line.replace(code + ":", "").trim()
                     if(!check) {
-                        continue;
+                        return;
                     }
 
                     line = line.substring(0, line.lastIndexOf(")") + 1)
