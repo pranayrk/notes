@@ -38,7 +38,7 @@ function loadDir(dir) {
             }
             let content = "";
             const lines = directory.split("\n");
-            lines.forEach((line) => {
+            lines.forEach((line, index) => {
                 if(!line) {
                     return;
                 }
@@ -46,7 +46,7 @@ function loadDir(dir) {
                     line = line.substring(0, line.lastIndexOf(")") + 1)
                     content += "* " + line + "\n";
                 } else {
-                    if(line.startsWith("# ")) {
+                    if(line.startsWith("# ") && index != 0) {
                         content += "\n\n---\n\n";
                     }
                     content += line + "\n"
