@@ -43,6 +43,11 @@ function loadDir(dir) {
                     return;
                 }
                 if(/^\d+/.test(line)) {
+                    check = line.replace(code + ":", "").trim()
+                    if(!check) {
+                        continue;
+                    }
+
                     line = line.substring(0, line.lastIndexOf(")") + 1)
                     content += "* " + line + "\n";
                 } else {
@@ -78,10 +83,6 @@ function loadCode(dir, code) {
                     continue;
                 }
                 if(line.startsWith(code + ":")) {
-                    line = line.replace(code + ":", "").trim()
-                    if(!line) {
-                        continue;
-                    }
                     found = true;
                     let link = line.substring(line.indexOf("(") + 1, line.lastIndexOf(")"))
                     goToLink(link)
