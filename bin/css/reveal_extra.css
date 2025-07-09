@@ -25,6 +25,7 @@
 	border: 2px solid var(--r-link-color);
 	background-color: var(--r-background-color);
 	color: var(--r-link-color);
+    outline: none;
 }
 
 .reveal {
