@@ -46,10 +46,6 @@ function loadDir(dir) {
                 if(/^\d+/.test(line)) {
                     line = line.substring(0, line.lastIndexOf(")") + 1)
                     content += "* " + line + "\n";
-                    index++;
-                    if((index + 1) % 10 == 0) {
-                        content += "\n\n---\n\n"
-                    }
                 } else {
                     if(line.startsWith("# ") && index != 0) {
                         content += "\n\n---\n\n";
