@@ -40,24 +40,23 @@
 .reveal h2 {
 	font-size: 42px;
     color: var(--r-link-color);
-	font-weight: normal;
 }
 
 .reveal h3 {
-    color: var(--r-link-color);
 	font-size: 38px;
+    color: var(--r-link-color);
 }
 
 .reveal h4 {
-    color: var(--r-link-color);
 	font-size: 33px;
+    color: var(--r-link-color);
 }
 
 .reveal h5 {
-    color: var(--r-link-color);
-	font-style: normal;
 	font-size: 29px;
+    color: var(--r-link-color);
 	font-weight: normal;
+	font-style: normal;
 	text-transform: none;
 }
 
