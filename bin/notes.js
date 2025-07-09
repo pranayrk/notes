@@ -43,7 +43,7 @@ function loadDir(dir) {
                     return;
                 }
                 if(/^\d+/.test(line)) {
-                    line = line.substring(0, line.lastIndexOf(")"))
+                    line = line.substring(0, line.lastIndexOf(")") + 1)
                     content += "* " + line + "\n";
                 } else {
                     content += line + "\n"

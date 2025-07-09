@@ -22,7 +22,7 @@
 #search, #submit {
 	height: 2rem;
 	font-size: 1rem;
-	border: 3px solid var(--r-link-color);
+	border: 2px solid var(--r-link-color);
 	background-color: var(--r-background-color);
 	color: var(--r-link-color);
 }
