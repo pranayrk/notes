@@ -78,6 +78,10 @@ function loadCode(dir, code) {
                     continue;
                 }
                 if(line.startsWith(code + ":")) {
+                    line = line.replace(code + ":", "").trim()
+                    if(!line) {
+                        continue;
+                    }
                     found = true;
                     let link = line.substring(line.indexOf("(") + 1, line.lastIndexOf(")"))
                     goToLink(link)

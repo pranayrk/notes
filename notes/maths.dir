@@ -1,4 +1,5 @@
 1001: [Statistics Directory](dir:statistics)
+100209: [Books to Check](md:maths/book.md]
 
 # Calculus
 100042: [Ramanujan's Master Theory and Fresnel Integrals](https://www.youtube.com/watch?v=oT20UwCQ-Vg)
@@ -50,7 +51,6 @@
 # Algebra
 100080: [Introduction to Geometric Algebra](https://www.youtube.com/watch?v=60z_hpEAtD8)
 100081: [A gentle description of vertex algebra](https://www.youtube.com/watch?v=7j4YVIFmAXw)
-100082: Abstract Algebra - Theory and Applications -- Judson: Open Source
 100083: [Algebraic Geometry and Differential Equations](https://www.youtube.com/watch?v=8wUM38Ldd1E)
 100084: [Prelude to Galois Theory, Symmetric Polynomials](https://www.youtube.com/watch?v=3imeTgGBaLc)
 100085: [Visual Algebra Lectures](https://www.youtube.com/watch?v=u9n30liuJKo)
@@ -78,7 +78,6 @@
 100103: [Why is the determinant like that](https://www.youtube.com/watch?v=Sv7VseMsOQc)
 100104: [Matrix Transpose and Four fundamental subspaces](https://www.youtube.com/watch?v=yfj8uMwAgrI)
 ---
-100105: Linear Algebra: A first course in Linear Algebra -- Beezer: Open Source
 100106: [Linear Algebra in hyperbolic space, introduction to gyrovector spaces](https://www.youtube.com/watch?v=TMZmXT5IOsY)
 100107: [Is the future of linear algebra random](https://www.youtube.com/watch?v=6htbyY3rH1w)
 100108: [Paper: An introduction to the conjugate gradient method without the pain](https://www.cs.cmu.edu/~quake-papers/painless-conjugate-gradient.pdf)
@@ -169,14 +168,9 @@
 100175: [The first real application of category theory](https://www.youtube.com/watch?v=Njx2ed8RGis)
 100176: [Co-products: motivating category theory](https://www.youtube.com/watch?v=3ZPaiEvI1HI)
 
-# Books
-100177: [Book of Mathematical Formulas and Strategies](https://www.omegalearn.org/thebookofformulas): Free Book
-100178: An elementary introduction to mathematical finance, Sheldon Ross
-
 # Other Pure Maths
 100179: [Equally Spacing Points on a Sphere](https://www.youtube.com/watch?v=c-6DV4ZyCdo)
-100180: [Cannon-Thurston maps, naturally occurring space filling
-curves](https://www.youtube.com/watch?v=FpeeFcK3lTk)
+100180: [Cannon-Thurston maps, naturally occurring space filling curves](https://www.youtube.com/watch?v=FpeeFcK3lTk)
 100181: [How the axiom of choice gives sizeless sets](https://www.youtube.com/watch?v=hcRZadc5KpI)
 100182: [Proof for Basel Problem, Apostol](https://www.youtube.com/watch?v=RNHULHp03FU)
 100183: [Generating primes through a recurrence relation](https://www.youtube.com/watch?v=OpaKpzMFOpg)
@@ -208,3 +202,10 @@ curves](https://www.youtube.com/watch?v=FpeeFcK3lTk)
 100206: [How to get into dynamical systems](https://www.reddit.com/r/math/comments/r2fiq8/guide_how_to_get_into_dynamical_systems/)
 100207: [Some Expository Articles, Leo Goldmaker](https://web.williams.edu/Mathematics/lg5/exposit.html)
 100208: [What is a convolution?](https://www.youtube.com/watch?v=KuXjwB4LzSA)
+100210:
+100211:
+100212:
+100213:
+100214:
+100215:
+100216:
