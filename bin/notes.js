@@ -116,6 +116,9 @@ function goToCode(code) {
 }
 
 function goToLink(link) {
+    if(!link) {
+        return;
+    }
     if(link.startsWith("http")) {
         if(link.startsWith(HOME)) {
             window.location = link;
