@@ -43,7 +43,7 @@ function loadDir(dir) {
                     return;
                 }
                 if(/^\d+/.test(line)) {
-                    check = line.replace(code + ":", "").trim()
+                    check = line.replace(line + ":", "").trim()
                     if(!check) {
                         return;
                     }
