@@ -48,10 +48,13 @@ function loadDir(dir) {
                 } else {
                     content += line + "\n"
                 }
+                console.log("Index" + index);
                 if(index + 1 % 10 == 0) {
+                    console.log("Line BREAK");
                     content += "\n\n---\n\n"
                 }
             });
+            console.log(content)
             loadMarkdown(content)
         });
 }

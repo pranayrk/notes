@@ -33,24 +33,28 @@
 }
 
 .reveal h1 {
+    font-size: 46px;
     color: var(--r-link-color);
 }
 
 .reveal h2 {
 	font-size: 42px;
+    color: var(--r-link-color);
 	font-weight: normal;
-	font-family: 'sanskrit', serif;
 }
 
 .reveal h3 {
+    color: var(--r-link-color);
 	font-size: 38px;
 }
 
 .reveal h4 {
+    color: var(--r-link-color);
 	font-size: 33px;
 }
 
 .reveal h5 {
+    color: var(--r-link-color);
 	font-style: normal;
 	font-size: 29px;
 	font-weight: normal;
