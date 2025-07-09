@@ -51,7 +51,7 @@ function loadDir(dir) {
                         content += "\n\n---\n\n"
                     }
                 } else {
-                    if(line.startsWith("# ")) {
+                    if(line.startsWith("# ") && index != 0) {
                         content += "\n\n---\n\n";
                         index = 0;
                     }
