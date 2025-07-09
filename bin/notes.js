@@ -80,7 +80,7 @@ function loadCode(dir, code) {
                 if(!line) {
                     continue;
                 }
-                if(line.startsWith(code)) {
+                if(line.startsWith(code + ":")) {
                     found = true;
                     let link = line.substring(line.indexOf("(") + 1, line.lastIndexOf(")"))
                     goToLink(link)
