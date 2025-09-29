@@ -7,8 +7,12 @@ function loadReveal() {
         height: 760,
         margin: 0.04,
         hash: true,
-        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealSubreader]
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealSubreader],
+        subreader: {
+            speed: "1"
+        }
     });
+
 }
 
 function load(content) {
