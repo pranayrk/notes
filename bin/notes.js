@@ -107,6 +107,8 @@ function goToCode(code) {
         return;
     }
 
+    code = code.toLowerCase(); 
+
     let i = 0;
     for (; i < code.length && (code[i] < '0' || code[i] > '9'); i++);
     let dir = code.substring(0,i);
