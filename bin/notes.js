@@ -178,3 +178,24 @@ function attachLinkEvent() {
     });
 }
 
+function loadCSS(href) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = href;
+
+    link.onload = () => {
+        console.log(`CSS file "${href}" loaded successfully.`);
+    };
+    link.onerror = () => {
+        console.error(`Failed to load CSS file "${href}".`);
+    };
+
+    document.head.appendChild(link);
+}
+
+Reveal.addEventListener('dharma', function() {
+    console.log("HERE");
+    document.getElementById('theme').setAttribute('href','css/theme/night.css');
+    loadCSS('notes/dharma/dharma.css');
+}, false );

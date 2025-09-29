@@ -1,0 +1,29 @@
+.reveal-viewport {
+	background-color: black;
+}
+
+@font-face {
+	font-family: sanskrit;
+	src: url("notes/dharma/sanskrit_2003.otf") format("opentype");
+}
+
+.reveal h2 {
+	font-size: 45px;
+	font-weight: normal;
+	font-family: 'sanskrit', serif;
+}
+
+.reveal section  {
+	font-size: 20px;
+}
+
+.reveal blockquote {
+	padding: 10px;
+	width: 140%;
+	font-size: 25px;
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	background-color: black;
+}
