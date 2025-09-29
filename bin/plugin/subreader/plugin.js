@@ -45,7 +45,7 @@ function addSubtitles(config) {
         return;
     }
     const audio = document.createElement("audio");
-    audio.src="plugin/subreader/blank.mp3";
+    audio.src="bin/plugin/subreader/blank.mp3";
     audio.id = "submedia";
     audio.controls = "";
     audio.playbackRate = config.speed ? config.speed : 1;
