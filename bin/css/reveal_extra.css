@@ -13,6 +13,7 @@
 
 .home {
 	left: 4%;
+	color: var(--r-link-color);
 }
 
 .search-container{
