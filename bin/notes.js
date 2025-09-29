@@ -9,7 +9,7 @@ function loadReveal() {
         hash: true,
         plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealSubreader],
         subreader: {
-            speed: "1"
+            speed: "0.5"
         }
     });
 
