@@ -40,10 +40,19 @@ function removeSubmedia() {
     }
 }
 
+function removeSubtitle() {
+    const subtitle = document.getElementById("subtitle");
+    if (subtitle) {
+        subtitle.remove();
+    }
+}
+
 function addSubtitles(config) {
     if(!config || !config.src) {
         return;
     }
+    removeSubmedia();
+    removeSubtitle();
     const audio = document.createElement("audio");
     audio.src="bin/plugin/subreader/blank.mp3";
     audio.id = "submedia";

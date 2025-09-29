@@ -2,6 +2,10 @@
 	background-color: black;
 }
 
+.slides {
+    color: white;
+}
+
 @font-face {
 	font-family: sanskrit;
 	src: url("sanskrit_2003.otf") format("opentype");
@@ -11,12 +15,10 @@
 	font-size: 45px;
 	font-weight: normal;
 	font-family: 'sanskrit', serif;
-    color: white;
     line-height: 1.8;
 }
 
 .reveal p {
-    color: white;
     line-height: 1.8;
 }
 
