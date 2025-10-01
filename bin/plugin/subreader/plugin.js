@@ -33,13 +33,6 @@ function handleCueCommands(cue) {
     }
 }
 
-function removeSubmedia() {
-    const submedia = document.getElementById("submedia");
-    if (submedia) {
-        submedia.remove();
-    }
-}
-
 function removeSubtitle() {
     const subtitle = document.getElementById("subtitle");
     if (subtitle) {
@@ -51,10 +44,10 @@ function addSubtitles(config) {
     if(!config || !config.src) {
         return;
     }
-    removeSubmedia();
     removeSubtitle();
     const audio = document.createElement("audio");
-    audio.src="bin/plugin/subreader/blank.mp3";
+    const dir = config.dir ? config.dir + "/subreader/": "plugin/subreader/";
+    audio.src= dir + "blank.mp3";
     audio.id = "submedia";
     audio.controls = "";
     audio.playbackRate = config.speed ? config.speed : 1;
@@ -71,7 +64,9 @@ function addSubtitles(config) {
         const subtitle = document.getElementById("subtitle");
         if(cues.length > 0) {
             if(!handleCueCommands(cues[0].text)) {
-                subtitle.innerHTML = cues[0].text;
+                let text = cues[0].text;
+                text = text.replace("\n", "<br/>");
+                subtitle.innerHTML = text;
             }
         } else {
             subtitle.innerHTML = "";
@@ -85,8 +80,9 @@ function addSubtitles(config) {
     const subtitle = document.createElement("div");
     subtitle.id = "subtitle"
 
+    subtitle.appendChild(audio);
+
     const slides = Reveal.getSlidesElement();
-    slides.appendChild(audio);
     slides.appendChild(subtitle);
 }
 
@@ -97,7 +93,7 @@ window.RevealSubreader = window.SubReader || {
     init: function(deck) {
         let config = Reveal.getConfig().subreader;
         if(!config) {
-            return;
+            config = {};
         }
         Reveal.addEventListener( 'ready', function( event ) {
             addSubtitles(config);
@@ -120,7 +116,10 @@ window.RevealSubreader = window.SubReader || {
             } else {
                 if(event.currentSlide.hasAttribute("data-subtitle")) {
                     config.src = event.currentSlide.getAttribute("data-subtitle");
-                    removeSubmedia();
+                    if(event.currentSlide.hasAttribute("data-subtitle-speed")) {
+                        config.speed = event.currentSlide.getAttribute("data-subtitle-speed");
+                    }
+                    removeSubtitle();
                     addSubtitles(config);
                 }
                 const audio = document.getElementById("submedia");

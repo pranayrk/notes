@@ -1,4 +1,4 @@
-const HOME = "https://pranayrk.github.io/notes/";
+const HOME = "/";
 const NOTES = HOME + "notes/";
 
 function loadReveal() {
@@ -8,8 +8,11 @@ function loadReveal() {
         margin: 0.04,
         hash: true,
         plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealSubreader],
+        katex: {
+            local: "bin/plugin/math/node_modules/katex"
+        },
         subreader: {
-            speed: "0.5"
+            dir: "bin/plugin"
         }
     });
 
@@ -17,8 +20,10 @@ function loadReveal() {
 
 function load(content) {
     Reveal.destroy();
-    slides = document.getElementsByClassName("slides")[0];
+
+    let slides = document.getElementsByClassName("slides")[0];
     slides.innerHTML = content;
+
     loadReveal();
     Reveal.slide(0);
 }
