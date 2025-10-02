@@ -1,5 +1,29 @@
 "use strict";
 
+let CONFIG;
+
+function loadConfig() {
+    if(CONFIG && CONFIG.loaded) {
+        //TODO: Remove once multiple events on reveal are handled
+        return;
+    }
+
+    CONFIG = Reveal.getConfig().subreader;
+    if(!CONFIG) {
+        CONFIG = {};
+    }
+
+    if(!CONFIG.dir) {
+        CONFIG.dir = "plugin";
+    }
+    CONFIG.dir += "/subreader/";
+
+    if(!CONFIG.speed) {
+        CONFIG.speed = 1;
+    }
+    CONFIG.loaded = true;
+}
+
 function handleCueCommands(cue) {
     if(cue.startsWith("{{gotoslide}}")) {
         const goToSlide = cue.replace("{{gotoslide}}", "").trim();
@@ -28,6 +52,9 @@ function handleCueCommands(cue) {
         case "{{pause}}":
             document.getElementById("submedia").pause();
             return true;
+        case "{{remove}}":
+            removeSubtitle();
+            return true;
         default:
             return false;    
     }
@@ -40,36 +67,35 @@ function removeSubtitle() {
     }
 }
 
-function addSubtitles(config) {
-    if(!config || !config.src) {
+function addSubtitle() {
+    if(!CONFIG.src) {
         return;
     }
     removeSubtitle();
     const audio = document.createElement("audio");
-    const dir = config.dir ? config.dir + "/subreader/": "plugin/subreader/";
-    audio.src= dir + "blank.mp3";
+    audio.src= CONFIG.dir + "blank.mp3";
     audio.id = "submedia";
     audio.controls = "";
-    audio.playbackRate = config.speed ? config.speed : 1;
+    audio.playbackRate = CONFIG.speed;
 
     const track = document.createElement("track");
     track.kind = "captions";
     track.label = "English";
     track.srclang = "en";
-    track.src = config.src;
+    track.src = CONFIG.src;
     track.mode = "showing"
 
     track.addEventListener('cuechange', (event) => {
         const cues = event.target.track.activeCues
-        const subtitle = document.getElementById("subtitle");
+        const subtitleText = document.getElementById("subtitle_text");
         if(cues.length > 0) {
             if(!handleCueCommands(cues[0].text)) {
                 let text = cues[0].text;
                 text = text.replace("\n", "<br/>");
-                subtitle.innerHTML = text;
+                subtitleText.innerHTML = text;
             }
         } else {
-            subtitle.innerHTML = "";
+            subtitleText.innerHTML = "";
         }
     });
 
@@ -82,8 +108,24 @@ function addSubtitles(config) {
 
     subtitle.appendChild(audio);
 
+    const subtitleText = document.createElement("div");
+    subtitleText.id = "subtitle_text";
+    subtitle.appendChild(subtitleText);
+
     const slides = Reveal.getSlidesElement();
     slides.appendChild(subtitle);
+
+    audio.play();
+}
+
+function loadSubtitle(src, speed) {
+    CONFIG.src = src;
+    if(!speed) {
+        speed = 1;
+    }
+    CONFIG.speed = speed;
+    removeSubtitle();
+    addSubtitle();
 }
 
 
@@ -91,12 +133,9 @@ window.RevealSubreader = window.SubReader || {
     id: 'RevealSubreader',
 
     init: function(deck) {
-        let config = Reveal.getConfig().subreader;
-        if(!config) {
-            config = {};
-        }
-        Reveal.addEventListener( 'ready', function( event ) {
-            addSubtitles(config);
+           Reveal.addEventListener( 'ready', function( event ) {
+            loadConfig();
+            addSubtitle();
         });
         Reveal.on('slidechanged', (event) => {
                 const audio = document.getElementById("submedia");
@@ -107,24 +146,21 @@ window.RevealSubreader = window.SubReader || {
         Reveal.on('slidetransitionend', (event) => {
             const state = Reveal.getState();
             if(state.indexh == 0 && state.indexv == 0) {
-                const audio = document.getElementById("submedia");
-                if(audio) 
-                {
-                    audio.pause();
-                    audio.currentTime = 0;
-                }
+                removeSubtitle();
             } else {
                 if(event.currentSlide.hasAttribute("data-subtitle")) {
-                    config.src = event.currentSlide.getAttribute("data-subtitle");
+                    CONFIG.src = event.currentSlide.getAttribute("data-subtitle");
                     if(event.currentSlide.hasAttribute("data-subtitle-speed")) {
-                        config.speed = event.currentSlide.getAttribute("data-subtitle-speed");
+                        CONFIG.speed = event.currentSlide.getAttribute("data-subtitle-speed");
                     }
                     removeSubtitle();
-                    addSubtitles(config);
+                    addSubtitle();
                 }
-                const audio = document.getElementById("submedia");
-                if(audio) {
-                    audio.play();
+                else {
+                    let audio = document.getElementById("submedia");
+                    if(audio) {
+                        audio.play();
+                    }
                 }
             }
         });

@@ -203,6 +203,6 @@ function loadCSS(href) {
 }
 
 Reveal.addEventListener('dharma', function() {
-    document.getElementById('theme').setAttribute('href','css/theme/night.css');
+//  document.getElementById('theme').setAttribute('href','bin/dist/theme/black-contrast.css');
     loadCSS('notes/dharma/dharma.css');
 }, false );

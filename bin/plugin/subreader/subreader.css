@@ -8,8 +8,9 @@
     font-size: 1.5rem;
 }
 
-#subvid {
+#submedia {
+    visibility: hidden;
     position: fixed;
     bottom: 0px;
-    pointer-events: all;
+    pointer-events: none;
 }
