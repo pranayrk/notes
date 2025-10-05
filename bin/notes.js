@@ -189,20 +189,10 @@ function attachLinkEvent() {
     });
 }
 
-function loadCSS(href) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = href;
-
-    link.onerror = () => {
-        console.error(`Failed to load CSS file "${href}".`);
-    };
-
-    document.head.appendChild(link);
+function loadCSS(state) {
+    document.getElementById('state').setAttribute('href','bin/dist/note_theme/' + state + ".css");
 }
 
 Reveal.addEventListener('dharma', function() {
-//  document.getElementById('theme').setAttribute('href','bin/dist/theme/black-contrast.css');
-    loadCSS('notes/dharma/dharma.css');
+    loadCSS('dharma');
 }, false );
